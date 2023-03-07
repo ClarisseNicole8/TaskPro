@@ -3,7 +3,7 @@ from projects.models import Project
 
 
 # Create your views here.
-def project_list(request, id=id):
+def list_projects(request):
     projects = Project.objects.all()
     context = {
         "projects": projects,
