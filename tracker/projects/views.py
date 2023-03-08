@@ -10,7 +10,7 @@ def list_projects(request):
     context = {
         "projects": projects,
     }
-    return render(request, "projects/project_list.html", context)
+    return render(request, "projects/list.html", context)
 
 
 @login_required
