@@ -15,8 +15,12 @@
 				<tbody>
 					{% for project in projects %}
 					<tr>
-						<td>{{ project.name }}</td>
-						<td>0</td>
+						<td>
+							<li><a href="{% url 'show_project' project.id %}">{{ project.name }}</a></li>
+						</td>
+						<td>
+							<li><a{{ project.tasks.all|length }} tasks></a></li>
+						</td>
 					</tr>
 					{% endfor %}
 				</tbody>
