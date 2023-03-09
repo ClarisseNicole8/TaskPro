@@ -20,7 +20,7 @@ from projects.views import list_projects
 
 
 def redirect_to_home(request):
-    return redirect("/home")
+    return redirect("home")
 
 
 urlpatterns = [

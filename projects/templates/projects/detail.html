@@ -1,4 +1,4 @@
-{% extends base.html %}
+{% extends 'base.html' %}
 
 {% block content %}
 <main>
@@ -21,16 +21,16 @@
                     <tr>
                         <td>{{ task.name }}</td>
                         <td>{{ task.assignee.username }}</td>
-                        <td>{{ task.start_date }}</td>
-                        <td>{{ task.due_date }}</td>
-                        <td>{{ task.is_completed|yesno:"yes,no" }}</td>
+                        <td>{{ task.start_date:"m/d/y" }}</td>
+                        <td>{{ task.due_date:"m/d/y" }}</td>
+                        <td>{{ task.is_completed|yesno }}</td>
                     </tr>
                     {% endfor %}
                 </tbody>
                 </thead>
             </table>
             {% else %}
-            <p>No tasks found for this project.</p>
+            <p>This project has no tasks</p>
             {% endif %}
     </div>
 </main>

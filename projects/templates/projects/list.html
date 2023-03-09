@@ -4,6 +4,9 @@
 	<main>
 		<div>
 			<h1>My Projects</h1>
+			<p>
+				<a href="{% url 'create_project' %}"Create a new project></a></li>
+			</p>
 			{% if projects %}
 			<table>
 				<thead>
@@ -16,10 +19,10 @@
 					{% for project in projects %}
 					<tr>
 						<td>
-							<li><a href="{% url 'show_project' project.id %}">{{ project.name }}</a></li>
+							<a href="{% url 'show_project' project.id %}">{{ project.name }}</a>
 						</td>
 						<td>
-							<li><a{{ project.tasks.all|length }} tasks></a></li>
+							<a{{ project.tasks.all|length }}></a>
 						</td>
 					</tr>
 					{% endfor %}
