@@ -15,7 +15,7 @@ def user_login(request):
             user = authenticate(request, username=username, password=password)
             if user is not None:
                 login(request, user)
-                return redirect("home")
+                return redirect("list_projects")
     else:
         form = LogInForm()
     context = {
@@ -39,7 +39,7 @@ def user_signup(request):
             if password == confirm:
                 user = User.objects.create_user(username, password=password)
                 login(request, user)
-                return redirect("home")
+                return redirect("list_projects")
             else:
                 form.add_error("password", "the passwords do not match")
     else:
